@@ -71,6 +71,11 @@ xmlns:functx="http://www.functx.com">
             </xsl:when>
             <xsl:when test="$linking-phrase/@label = 'is a form of' or $linking-phrase/@label = 'is a Form of'">
               <xsl:message>WARNING: 'is a form of' connection for concept <xsl:value-of select="$current-concept/@label"/> currently not supported</xsl:message>
+              <!--
+              <xsl:element name="{functx:words-to-camel-case($linked-concept/@label)}">
+                <xsl:attribute name="rdf:ID">functx:words-to-camel-case($current-concept/@label</xsl:attribute>
+              </xsl:element>
+              -->
             </xsl:when>
             <xsl:when test="$linking-phrase/@label = 'synonym' or $linking-phrase/@label = 'Synonym'">
               <xsl:message>WARNING: 'synonym' connection for concept <xsl:value-of select="$current-concept/@label"/> currently not supported</xsl:message>
